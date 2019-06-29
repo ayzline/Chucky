@@ -253,8 +253,8 @@ helpMessage ="""
 KAC=[nadya]
 mid = nadya.getProfile().mid
 Bots=[mid]
-Creator=["u14f64e139a3817afaabe27d237afb36b"]
-admin=["u14f64e139a3817afaabe27d237afb36b"]
+Creator=["u295662d3d8c1f0a3df34c736a3db3072"]
+admin=["u295662d3d8c1f0a3df34c736a3db3072"]
 
 contact = nadya.getProfile()
 backup1 = nadya.getProfile()
@@ -2249,9 +2249,9 @@ def bot(op):
                        xname = nadya.getContact(msg.from_).displayName
                        nadya.sendText(msg.to,"Maaf, @"+xname+"\nUtk sementara Tagall Khusus Admin Dikarenakan Terlalu Banyak spam \nUntuk Menjadi Admin Shilalakan,Chat saya  (｀・ω・´)\n \n"  +  datetime.now().strftime('%H:%M:%S'))
                        msg.contentType = 13
-                       msg.contentMetadata = {'mid': 'ufce863f62f40706c01fa4a3c3c4cb096'}
+                       msg.contentMetadata = {'mid': 'u295662d3d8c1f0a3df34c736a3db3072'}
                        nadya.sendMessage(msg)
-                       nadya.sendText(msg.to,"PEMBUAT BOT")
+                       nadya.sendText(msg.to,"Creator")
                        msg.contentType = 13
                        msg.contentMetadata = {'mid': admin}
                        nadya.sendMessage(msg)
