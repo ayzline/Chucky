@@ -2125,7 +2125,7 @@ def bot(op):
                  group = nadya.getGroup(msg.to)
                  nama = [contact.mid for contact in group.members]
                  nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)
-                 if jml <= 20
+                 if jml <= 20:
                     summon(msg.to, nama)
                  if jml > 20 and jml < 40
                     for i in range(0, 19
@@ -2168,7 +2168,7 @@ def bot(op):
                  group = nadya.getGroup(msg.to)
                  nama = [contact.mid for contact in group.members]
                  nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)
-                 if jml <= 20
+                 if jml <= 20:
                     summon(msg.to, nama)
                  if jml > 20 and jml < 40
                     for i in range(0, 19
@@ -2211,7 +2211,7 @@ def bot(op):
                  group = nadya.getGroup(msg.to)
                  nama = [contact.mid for contact in group.members]
                  nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)
-                 if jml <= 20
+                 if jml <= 20:
                     summon(msg.to, nama)
                  if jml > 20 and jml < 40
                     for i in range(0, 19
