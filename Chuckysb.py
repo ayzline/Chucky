@@ -2089,7 +2089,7 @@ def bot(op):
                 
 
             elif "tag all" == msg.text.lower():
-                 group = nadya.getGroup(to)
+                 group = nadya.getGroup(msg.to)
 		 midMembers = [contact.mid for contact in group.members]
 		 midSelect = len(midMembers)//20
 		 for mentionMembers in range(midSelect+1):
@@ -2101,8 +2101,8 @@ def bot(op):
 				 no += 1
 		 ret_ += "\n╠ {}. @!".format(str(no))
 		 ret_ += "\n╚══[ Total {} Members]".format(str(len(dataMid)))
-		 nadya.sendMention(to, ret_, dataMid)
-		 nadya.sendMessage(to, "Total {} Members".format(str(len(midMembers))))
+		 nadya.sendMention(msg.to, ret_, dataMid)
+		 nadya.sendMessage(msg.to, "Total {} Members".format(str(len(midMembers))))
                  
             elif "tagall" == msg.text.lower():
                  group = nadya.getGroup(msg.to)
