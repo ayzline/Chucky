@@ -2101,7 +2101,7 @@ def bot(op):
 				 no += 1
 		 ret_ += "\n╠ {}. @!".format(str(no))
 		 ret_ += "\n╚══[ Total {} Members]".format(str(len(dataMid)))
-		 nadya.sendMention(msg.to, ret_, dataMid)
+		 summon(msg.to, ret_, dataMid)
 		 nadya.sendMessage(msg.to, "Total {} Members".format(str(len(midMembers))))
                  
             elif "tagall" == msg.text.lower():
