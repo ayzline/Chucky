@@ -2087,67 +2087,41 @@ def bot(op):
                 msg.text = None
                 nadya.sendMessage(msg)
                 
+#--------------------------------------------------------
+            elif msg.text in ["ngewe","nge","mo","mi"]:
+               if msg.from_ in admin:
+     #         if wait["tagall"] == True:
+                  group = nadya.getGroup(msg.to)
+                  nama = [contact.mid for contact in group.members] 
+                  cb = ""
+                  cb2 = ""
+                  strt = int(0)
+                  akh = int(0)
+                  for md in nama:
+                      akh = akh + int(6)
 
-            elif "tag all" == msg.text.lower():
-		 group = nadya.getGroup(msg.to)
-                 nama = [contact.mid for contact in group.members]
-                 nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)
-                 if jml <= 100:
-                    summon(msg.to, nama)
-                 if jml > 100 and jml < 200:
-                    for i in range(0, 99):
-                        nm1 += [nama[i]]
-                    summon(msg.to, nm1)
-                    for j in range(100, len(nama)-1): 
-                        nm2 += [nama[j]]
-                    summon(msg.to, nm2)                 
-                 if jml > 200 and jml < 300:
-                    for i in range(0, 99):
-                        nm1 += [nama[i]]
-                    summon(msg.to, nm1)
-                    for j in range(100, 199):
-                        nm2 += [nama[j]]
-                    summon(msg.to, nm2)
-                    for k in range(200, len(nama)-1):
-                        nm3 += [nama[k]]
-                    summon(msg.to, nm3)
-                 if jml > 300  and jml < 400:
-                    for i in range(0, 99):
-                        nm1 += [nama[i]]
-                    summon(msg.to, nm1)
-                    for j in range(100, 199):
-                        nm2 += [nama[j]]
-                    summon(msg.to, nm2)
-                    for k in range(200, 299):
-                        nm3 += [nama[k]]
-                    summon(msg.to, nm3)
-                    for l in range(300, len(nama)-1):
-                    	nm4 += [nama[l]]
-                    summon(msg.to, nm4)
-                 if jml > 400  and jml < 500:
-                    for i in range(0, 99):
-                        nm1 += [nama[i]]
-                    summon(msg.to, nm1)
-                    for j in range(100, 199):
-                        nm2 += [nama[j]]
-                    summon(msg.to, nm2)
-                    for k in range(200, 299):
-                        nm3 += [nama[k]]
-                    summon(msg.to, nm3)
-                    for l in range(300, 399):
-                        nm4 += [nama[l]]
-                    summon(msg.to, nm4)
-                    for m in range(400, len(nama)-1):
-                        nm5 += [nama[m]]
-                    summon(msg.to, nm5)
-                 if jml > 500:
-                     print "Terlalu Banyak Men 500+"
-                 cnt = Message()
-                 cnt.text = "Jumlah:\n" + str(jml) +  " Members"
-                 cnt.to = msg.to
-                 nadya.sendMessage(cnt)   
-                 
+                      cb += """{"S":"""+json.dumps(str(strt))+""","E":"""+json.dumps(str(akh))+""","M":"""+json.dumps(md)+"},"""
+
+                      strt = strt + int(7)
+                      akh = akh + 1
+                      cb2 += "@nrik \n"
+
+                  cb = (cb[:int(len(cb)-1)])
+                  msg.contentType = 0
+                  msg.text = cb2
+                  msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+cb+']}','EMTVER':'4'}
+                  nadya.sendMessage(msg)
+                  nadya.sendText(msg.to,"Yuk Kak Ngumpul Ada Notif Penting \n  (｀・ω・´)\n \n"  +  datetime.now().strftime('%H:%M:%S'))
+               else: 
+  #                if wait["tagall"] == False:  
+                       xname = nadya.getContact(msg.from_).displayName
+                       nadya.sendText(msg.to,"Maaf, @"+xname+"\nUtk sementara Tagall Khusus Admin Dikarenakan Terlalu Banyak spam \nUntuk Menjadi Admin Shilalakan,Chat saya  (｀・ω・´)\n \n"  +  datetime.now().strftime('%H:%M:%S'))
+                       msg.contentType = 13
+                       msg.contentMetadata = {'mid': 'u295662d3d8c1f0a3df34c736a3db3072'}
+                       nadya.sendMessage(msg)
+
             elif "tagall" == msg.text.lower():
+            	if msg.from_ in admin:
                  group = nadya.getGroup(msg.to)
                  nama = [contact.mid for contact in group.members]
                  nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)
@@ -2157,33 +2131,10 @@ def bot(op):
                     for i in range(0, 99):
                         nm1 += [nama[i]]
                     summon(msg.to, nm1)
-                    for j in range(100, len(nama)-1): 
-                        nm2 += [nama[j]]
-                    summon(msg.to, nm2)                 
-                 if jml > 200 and jml < 300:
-                    for i in range(0, 99):
-                        nm1 += [nama[i]]
-                    summon(msg.to, nm1)
-                    for j in range(100, 199):
+                    for j in range(100, len(nama)-1):
                         nm2 += [nama[j]]
                     summon(msg.to, nm2)
-                    for k in range(200, len(nama)-1):
-                        nm3 += [nama[k]]
-                    summon(msg.to, nm3)
-                 if jml > 300  and jml < 400:
-                    for i in range(0, 99):
-                        nm1 += [nama[i]]
-                    summon(msg.to, nm1)
-                    for j in range(100, 199):
-                        nm2 += [nama[j]]
-                    summon(msg.to, nm2)
-                    for k in range(200, 299):
-                        nm3 += [nama[k]]
-                    summon(msg.to, nm3)
-                    for l in range(300, len(nama)-1):
-                    	nm4 += [nama[l]]
-                    summon(msg.to, nm4)
-                 if jml > 400  and jml < 500:
+                 if jml > 200  and jml < 500:
                     for i in range(0, 99):
                         nm1 += [nama[i]]
                     summon(msg.to, nm1)
@@ -2204,8 +2155,106 @@ def bot(op):
                  cnt = Message()
                  cnt.text = "Jumlah:\n" + str(jml) +  " Members"
                  cnt.to = msg.to
-                 nadya.sendMessage(cnt)                 
+                 nadya.sendMessage(cnt)
+                 xname = nadya.getContact(msg.from_).displayName
+                 nadya.sendText(msg.to,"Ada pemberitahuan dari kak "+xname+"\nJangan Pada diam Ya kak  \nJangan Juga sider   (｀・ω・´)\n \n"  +  datetime.now().strftime('%H:%M:%S'))
+                else:   
+  #                if wait["tagall"] == False:  
+                       xname = nadya.getContact(msg.from_).displayName
+                       nadya.sendText(msg.to,"Maaf, @"+xname+"\nSilahkan gunakan yang lain\n \n"  +  datetime.now().strftime('%H:%M:%S'))
 
+            elif "tag" == msg.text.lower():
+            	if msg.from_ in admin:
+                 group = nadya.getGroup(msg.to)
+                 nama = [contact.mid for contact in group.members]
+                 nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)
+                 if jml <= 100:
+                    summon(msg.to, nama)
+                 if jml > 100 and jml < 200:
+                    for i in range(0, 99):
+                        nm1 += [nama[i]]
+                    summon(msg.to, nm1)
+                    for j in range(100, len(nama)-1):
+                        nm2 += [nama[j]]
+                    summon(msg.to, nm2)
+                 if jml > 200  and jml < 500:
+                    for i in range(0, 99):
+                        nm1 += [nama[i]]
+                    summon(msg.to, nm1)
+                    for j in range(100, 199):
+                        nm2 += [nama[j]]
+                    summon(msg.to, nm2)
+                    for k in range(200, 299):
+                        nm3 += [nama[k]]
+                    summon(msg.to, nm3)
+                    for l in range(300, 399):
+                        nm4 += [nama[l]]
+                    summon(msg.to, nm4)
+                    for m in range(400, len(nama)-1):
+                        nm5 += [nama[m]]
+                    summon(msg.to, nm5)
+                 if jml > 500:
+                     print "Terlalu Banyak Men 500+"
+                 cnt = Message()
+                 cnt.text = "Jumlah:\n" + str(jml) +  " Members"
+                 cnt.to = msg.to
+                 nadya.sendMessage(cnt)
+                 xname = nadya.getContact(msg.from_).displayName
+                 nadya.sendText(msg.to,"Ada pemberitahuan dari kak "+xname+"\nJangan Pada diam Ya kak  \nJangan Juga sider   (｀・ω・´)\n \n"  +  datetime.now().strftime('%H:%M:%S'))
+                else:   
+  #                if wait["tagall"] == False:  
+                       xname = nadya.getContact(msg.from_).displayName
+                       nadya.sendText(msg.to,"Maaf, @"+xname+"\nUtk sementara Tagall Khusus Admin Dikarenakan Terlalu Banyak spam \nUntuk info lebih lanjut silahkan subcrabe channel prankbots terlebih https://www.youtube.com/channel/UCycBrqSWEHdk-slnhUmGWiQ\n\n""WAKTU\n"  +  datetime.now().strftime('%H:%M:%S'))
+
+            elif "Tagall" == msg.text.lower():
+            	if msg.from_ in admin:
+                 group = nadya.getGroup(msg.to)
+                 nama = [contact.mid for contact in group.members]
+                 nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)
+                 if jml <= 100:
+                    summon(msg.to, nama)
+                 if jml > 100 and jml < 200:
+                    for i in range(0, 99):
+                        nm1 += [nama[i]]
+                    summon(msg.to, nm1)
+                    for j in range(100, len(nama)-1):
+                        nm2 += [nama[j]]
+                    summon(msg.to, nm2)
+                 if jml > 200  and jml < 500:
+                    for i in range(0, 99):
+                        nm1 += [nama[i]]
+                    summon(msg.to, nm1)
+                    for j in range(100, 199):
+                        nm2 += [nama[j]]
+                    summon(msg.to, nm2)
+                    for k in range(200, 299):
+                        nm3 += [nama[k]]
+                    summon(msg.to, nm3)
+                    for l in range(300, 399):
+                        nm4 += [nama[l]]
+                    summon(msg.to, nm4)
+                    for m in range(400, len(nama)-1):
+                        nm5 += [nama[m]]
+                    summon(msg.to, nm5)
+                 if jml > 500:
+                     print "Terlalu Banyak Men 500+"
+                 cnt = Message()
+                 cnt.text = "Jumlah:\n" + str(jml) +  " Members"
+                 cnt.to = msg.to
+                 nadya.sendMessage(cnt)
+                 xname = nadya.getContact(msg.from_).displayName
+                 nadya.sendText(msg.to,"Ada pemberitahuan dari kak "+xname+"\nJangan Pada diam Ya kak  \nJangan Juga sider   (｀・ω・´)\n \n"  +  datetime.now().strftime('%H:%M:%S'))
+                else:   
+  #                if wait["tagall"] == False:  
+                       xname = nadya.getContact(msg.from_).displayName
+                       nadya.sendText(msg.to,"Maaf, @"+xname+"\nUtk sementara Tagall Khusus Admin Dikarenakan Terlalu Banyak spam \nUntuk Menjadi Admin Shilalakan,Chat saya  (｀・ω・´)\n \n"  +  datetime.now().strftime('%H:%M:%S'))
+                       msg.contentType = 13
+                       msg.contentMetadata = {'mid': 'ufce863f62f40706c01fa4a3c3c4cb096'}
+                       nadya.sendMessage(msg)
+                       nadya.sendText(msg.to,"PEMBUAT BOT")
+                       msg.contentType = 13
+                       msg.contentMetadata = {'mid': admin}
+                       nadya.sendMessage(msg)
 
             elif msg.text in ["Setview","Setpoint","Cctv"]:
                 subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
