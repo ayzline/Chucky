@@ -2089,63 +2089,20 @@ def bot(op):
                 
 
             elif "tag all" == msg.text.lower():
-                 group = nadya.getGroup(msg.to)
-                 nama = [contact.mid for contact in group.members]
-                 nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)
-                 if jml <= 100:
-                    summon(msg.to, nama)
-                 if jml > 100 and jml < 200:
-                    for i in range(0, 99):
-                        nm1 += [nama[i]]
-                    summon(msg.to, nm1)
-                    for j in range(100, len(nama)-1): 
-                        nm2 += [nama[j]]
-                    summon(msg.to, nm2)                 
-                 if jml > 200 and jml < 300:
-                    for i in range(0, 99):
-                        nm1 += [nama[i]]
-                    summon(msg.to, nm1)
-                    for j in range(100, 199):
-                        nm2 += [nama[j]]
-                    summon(msg.to, nm2)
-                    for k in range(200, len(nama)-1):
-                        nm3 += [nama[k]]
-                    summon(msg.to, nm3)
-                 if jml > 300  and jml < 400:
-                    for i in range(0, 99):
-                        nm1 += [nama[i]]
-                    summon(msg.to, nm1)
-                    for j in range(100, 199):
-                        nm2 += [nama[j]]
-                    summon(msg.to, nm2)
-                    for k in range(200, 299):
-                        nm3 += [nama[k]]
-                    summon(msg.to, nm3)
-                    for l in range(300, len(nama)-1):
-                    	nm4 += [nama[l]]
-                    summon(msg.to, nm4)
-                 if jml > 400  and jml < 500:
-                    for i in range(0, 99):
-                        nm1 += [nama[i]]
-                    summon(msg.to, nm1)
-                    for j in range(100, 199):
-                        nm2 += [nama[j]]
-                    summon(msg.to, nm2)
-                    for k in range(200, 299):
-                        nm3 += [nama[k]]
-                    summon(msg.to, nm3)
-                    for l in range(300, 399):
-                        nm4 += [nama[l]]
-                    summon(msg.to, nm4)
-                    for m in range(400, len(nama)-1):
-                        nm5 += [nama[m]]
-                    summon(msg.to, nm5)
-                 if jml > 500:
-                     print "Terlalu Banyak Men 500+"
-                 cnt = Message()
-                 cnt.text = "Jumlah:\n" + str(jml) +  " Members"
-                 cnt.to = msg.to
-                 nadya.sendMessage(cnt)
+                 group = nadya.getGroup(to)
+		 midMembers = [contact.mid for contact in group.members]
+		 midSelect = len(midMembers)//20
+		 for mentionMembers in range(midSelect+1):
+		 no = 0
+		 ret_ = "╔══[ Mention Members ]"
+		 dataMid = []
+		 for dataMention in group.members[mentionMembers*20 : (mentionMembers+1)*20]:
+		 dataMid.append(dataMention.mid)
+		 no += 1
+		 ret_ += "\n╠ {}. @!".format(str(no))
+		 ret_ += "\n╚══[ Total {} Members]".format(str(len(dataMid)))
+		 nadya.sendMention(to, ret_, dataMid)
+		 nadya.sendMessage(to, "Total {} Members".format(str(len(midMembers))))
                  
             elif "tagall" == msg.text.lower():
                  group = nadya.getGroup(msg.to)
