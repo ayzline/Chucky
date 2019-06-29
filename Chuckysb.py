@@ -2093,12 +2093,12 @@ def bot(op):
 		 midMembers = [contact.mid for contact in group.members]
 		 midSelect = len(midMembers)//20
 		 for mentionMembers in range(midSelect+1):
-		 no = 0
-		 ret_ = "╔══[ Mention Members ]"
-		 dataMid = []
-		 for dataMention in group.members[mentionMembers*20 : (mentionMembers+1)*20]:
-		 dataMid.append(dataMention.mid)
-		 no += 1
+		 	 no = 0
+		 	 ret_ = "╔══[ Mention Members ]"
+			 dataMid = []
+			 for dataMention in group.members[mentionMembers*20 : (mentionMembers+1)*20]:
+				 dataMid.append(dataMention.mid)
+				 no += 1
 		 ret_ += "\n╠ {}. @!".format(str(no))
 		 ret_ += "\n╚══[ Total {} Members]".format(str(len(dataMid)))
 		 nadya.sendMention(to, ret_, dataMid)
