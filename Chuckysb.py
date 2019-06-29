@@ -2131,7 +2131,7 @@ def bot(op):
                     for i in range(0, 19):
                         nm1 += [nama[i]]
                     summon(msg.to, nm1)
-                    for j in range(20 len(nama)-1):
+                    for j in range(20, len(nama)-1):
                         nm2 += [nama[j]]
                     summon(msg.to, nm2)
                  if jml > 40 and jml < 500:
@@ -2174,7 +2174,7 @@ def bot(op):
                     for i in range(0, 19):
                         nm1 += [nama[i]]
                     summon(msg.to, nm1)
-                    for j in range(20 len(nama)-1):
+                    for j in range(20, len(nama)-1):
                         nm2 += [nama[j]]
                     summon(msg.to, nm2)
                  if jml > 40 and jml < 500:
@@ -2217,7 +2217,7 @@ def bot(op):
                     for i in range(0, 19):
                         nm1 += [nama[i]]
                     summon(msg.to, nm1)
-                    for j in range(20 len(nama)-1):
+                    for j in range(20, len(nama)-1):
                         nm2 += [nama[j]]
                     summon(msg.to, nm2)
                  if jml > 40 and jml < 500:
