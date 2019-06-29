@@ -2127,15 +2127,15 @@ def bot(op):
                  nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)
                  if jml <= 20:
                     summon(msg.to, nama)
-                 if jml > 20 and jml < 40
-                    for i in range(0, 19
+                 if jml > 20 and jml < 40:
+                    for i in range(0, 19):
                         nm1 += [nama[i]]
                     summon(msg.to, nm1)
                     for j in range(20 len(nama)-1):
                         nm2 += [nama[j]]
                     summon(msg.to, nm2)
                  if jml > 40 and jml < 500:
-                    for i in range(0, 19:
+                    for i in range(0, 19):
                         nm1 += [nama[i]]
                     summon(msg.to, nm1)
                     for j in range(20, 39):
@@ -2170,15 +2170,15 @@ def bot(op):
                  nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)
                  if jml <= 20:
                     summon(msg.to, nama)
-                 if jml > 20 and jml < 40
-                    for i in range(0, 19
+                 if jml > 20 and jml < 40:
+                    for i in range(0, 19):
                         nm1 += [nama[i]]
                     summon(msg.to, nm1)
                     for j in range(20 len(nama)-1):
                         nm2 += [nama[j]]
                     summon(msg.to, nm2)
                  if jml > 40 and jml < 500:
-                    for i in range(0, 19:
+                    for i in range(0, 19):
                         nm1 += [nama[i]]
                     summon(msg.to, nm1)
                     for j in range(20, 39):
@@ -2213,15 +2213,15 @@ def bot(op):
                  nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)
                  if jml <= 20:
                     summon(msg.to, nama)
-                 if jml > 20 and jml < 40
-                    for i in range(0, 19
+                 if jml > 20 and jml < 40:
+                    for i in range(0, 19):
                         nm1 += [nama[i]]
                     summon(msg.to, nm1)
                     for j in range(20 len(nama)-1):
                         nm2 += [nama[j]]
                     summon(msg.to, nm2)
                  if jml > 40 and jml < 500:
-                    for i in range(0, 19:
+                    for i in range(0, 19):
                         nm1 += [nama[i]]
                     summon(msg.to, nm1)
                     for j in range(20, 39):
