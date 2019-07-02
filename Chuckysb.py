@@ -12,7 +12,7 @@ import time,random,sys,json,codecs,threading,glob,urllib,urllib2,urllib3,re,ast,
 
 nadya = LINETCR.LINE()
 #nadya.login(qr=True)
-nadya.login(token='EGdyu2Ea63szMr6LeIv2.kvzI09Jb8kpFnmC2O9SWCG.fGbXt6/n75iBDxb2pvd3zzM4j+AzwN45yWnYX+IqLwU=')
+nadya.login(token='EGqev7CtrmO2NmWfFHy2.kvzI09Jb8kpFnmC2O9SWCG.uALY+rLuwqs2LuJXkCp3lYjsPmIxGKTn0rH05G3NWQg=')
 nadya.loginResult()
 print "Nadya-Login Success\n\n=====[Sukses Login]====="
 
